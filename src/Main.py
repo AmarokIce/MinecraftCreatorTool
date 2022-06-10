@@ -4,10 +4,10 @@
 import os
 import pprint
 import time
-from MinecraftTool.GetJSONHelper import GetJSONHelper
-from MinecraftTool.GetReport import GetReport
-from MinecraftTool.TickHelper import TickHelper
-from MinecraftTool.UnicodeHelper import UnicodeHelper
+from MinecraftTool import GetJSONHelper
+from MinecraftTool import GetReport
+from MinecraftTool import TickHelper
+from MinecraftTool import UnicodeHelper
 
 def classJson():
     while True:
