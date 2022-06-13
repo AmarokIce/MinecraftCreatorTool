@@ -4,10 +4,10 @@
 import os
 import pprint
 import time
-from MinecraftTool import GetJSONHelper
-from MinecraftTool import GetReport
-from MinecraftTool import TickHelper
-from MinecraftTool import UnicodeHelper
+from minecrafttool.GetJSONHelper    import GetJSONHelper
+from minecrafttool.GetReport        import GetReport
+from minecrafttool.TickHelper       import TickHelper
+from minecrafttool.UnicodeHelper    import UnicodeHelper
 
 def classJson():
     while True:
@@ -33,10 +33,11 @@ def classTick():
 
     while True:
         try:
-            times = input('请输入时间数据')
-            ticks = int(input('请输入刻度数据'))
+            times = input('请输入时间数据:')
             if times == 'exit':
                 break
+            
+            ticks = int(input('请输入刻度数据:'))
         except:
             print('发现无效的数据！')
         else:
@@ -45,7 +46,9 @@ def classTick():
 
 def classUnicode():
     while True:
-        getString = input('请输入待转换文字')
+        getString = input('请输入待转换文字：')
+        if getString == 'exit':
+            break
 
         classUnicode = UnicodeHelper(getString)
         classUnicode.unicodeMode()
@@ -71,7 +74,7 @@ HelpTable = {
 #* Start Main: Minecraft Creator Tool Pockage #
 if __name__ == "__main__":
     while True:
-        Command = input('如果你需要帮助，请输入help')
+        Command = input('如果你需要帮助，请输入help：')
         if Command == 'help':
             pprint.pprint(HelpTable)
         elif Command == 'exit':

@@ -7,7 +7,7 @@ class UnicodeHelper:
        
     def unicodeMode(self):
         self.getStr = self.getStr.encode('unicode_escape')
-        self.getStr = self.getStr.replace('\\','\')
+        self.getStr = self.getStr.replace('\\\\','\\')
         print(self.getStr)
 
 
