@@ -36,7 +36,7 @@ def classTick():
             times = input('请输入时间数据:')
             if times == 'exit':
                 break
-            
+
             ticks = int(input('请输入刻度数据:'))
         except:
             print('发现无效的数据！')
@@ -60,7 +60,7 @@ def CommandMune(Command):
         'tick':classTick,
         'unicode':classUnicode
     }
-    
+
     CommandTable[Command]()
 
 HelpTable = {
@@ -78,7 +78,7 @@ if __name__ == "__main__":
         if Command == 'help':
             pprint.pprint(HelpTable)
         elif Command == 'exit':
-            os.exit(0)
+            os._exit(0)
         else:
             try:
                 CommandMune(Command)

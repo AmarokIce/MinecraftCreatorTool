@@ -14,22 +14,22 @@ class TickHelper:
             self.times = str(times)
         except:
             print("存在问题的数据。")
-    
+
     def TimesHelper(self):
         self.tick = self.ticks * 20
         self.mins = self.tick * 60
         self.hour = self.mins * 60
         self.days = self.hour * 24
-        
+
         getTimesHelper = {
-            'seconds':self.tick,
-            'min':self.mins,
-            'hour':self.hour,
-            'day':self.days
+            'seconds': self.tick,
+            'min': self.mins,
+            'hour': self.hour,
+            'day': self.days
         }
-        
+
         print(getTimesHelper[self.times])
-        
+
 
 if __name__ == '__main__':
     print('seconds:秒')
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     print('hour:小时')
     print('day:天')
     print('exit:退出程序')
-    
+
     while True:
         times = input('请输入时间数据')
         ticks = int(input('请输入刻度数据'))
