@@ -126,7 +126,12 @@ class GetReport:
             print('')
             time.sleep(1)
             print('参考：')
-            print(self.Description(getDescription))
+            try:
+                print(self.Description(getDescription))
+            except:
+                print('Null: Not find error mode.')
+            
+            time.sleep(3)
 
 
 if __name__ == '__main__':
