@@ -31,7 +31,7 @@ If you choose to accept AFL-3.0, you may need to show in your README or somewher
 
 [With AFL - 3.0? Click me.](https://opensource.org/licenses/AFL-3.0)
 
-### === 菠萝许可证 ===
+### === 凤梨许可证 ===
 
 我会提供全部或者部分的代码，只要您在法律限制之内使用，您可以随意的使用这些代码。  
 您可以获取这份源代码全部的使用权并且不需要支付任何版权税，如果您被授权了这份许可证，这将会永久生效且不可撤回。如果您使用这些代码制作了副本，您应当将本许可证包涵其中保持原有代码依然开源。  
