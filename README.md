@@ -1,7 +1,15 @@
 ![](icon.png)
 
-[TOC]
-## **关于**
+## **Minecraft模组开发者小工具**
+$状态： 正在更新$
+
+1.[关于](#About)  
+2.[外部库](#lib)  
+3.[许可证](#license)
+
+***
+
+## <span id="About">**关于**</span>
 这套Python小工具由Someoneice制作，使用Main时将会以整合形式启动，也可在MinecraftTool文件夹中每个模块单独启动使用。  
 这套工具主要效力于ManaMetalMod官方讨论组，以及维护[ManaMetalMod Wiki](https://mana-metal-mod.fandom.com/zh)与[MC百科 ManaMetalMod](https://mcmod.cn/class/1111)页面。欢迎访问我的[个狼博客页](https://ut.snowlyicewolf.club)。  
 这套工具提供了以下功能：
@@ -14,7 +22,7 @@
 * ~~将16x 的帧粘合为gif~~ （正在实现）
 
 ***
-## **外部库**
+## <span id=lib>**外部库**</span>
 图像处理需要使用到部分库。请放心，我使用的是一些热门且优秀的库，安装这些库也会提高你的工作效率。
 若你还没有这些库，可以在lib文件夹中运行GitPIPLib.py文件获取。
 列表如下：
@@ -25,7 +33,7 @@ OpenCV : Python优质视觉图像处理库。
 
 
 ***
-## **开源许可**
+## <span id=license> **开源许可**</span>
 ### === Pineapple license ===
 
 I will provide all or part of the code, as long as you use it within the limits of the law, you can use these codes as you like.  
