@@ -34,7 +34,7 @@ class GetReport:
         return __ReportDescription[getDescription]
     
     def OpenErrorReport(self):
-        self.filename=askopenfilename()
+        self.filename=askopenfilename(title="Select crash-report", filetypes=(("crash-report", "*.txt"),))
 
         with open(f'{self.filename}') as f:
             filedata = f.readlines()

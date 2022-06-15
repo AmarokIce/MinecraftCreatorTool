@@ -14,7 +14,7 @@ class GIFHelper:
     else:
         os.mkdir(__output_path)
 
-    Img = Image.open(askopenfilename())
+    Img = Image.open(askopenfilename(title="Select PNG file", filetypes=(("PNG files", "*.png"),)))
     print(Img)
     Img_size = Img.size
     m, n = Img_size[0], Img_size[1]
