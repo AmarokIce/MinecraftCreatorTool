@@ -11,8 +11,8 @@ class GetJSONHelper:
 
     def getJsonHelper(self):
         mod_path = os.path.dirname(os.path.abspath(__file__))
-        
         input_path = os.path.join(mod_path, "inputJson")
+        
         if os.path.exists(input_path):
           pass
         else:
@@ -28,12 +28,14 @@ class GetJSONHelper:
                   "layerN"
                 ]
                 ''')
+          
           input('請將即將導入的內容按照上方演示格式填入json,按下Enter后选择向导将会出现。')
           try:
             self.filename = askopenfilename()
 
             with open(f'{self.filename}') as f:
                  Item = json.load(f)
+                 
           except:
             print("无效的检索！")
             time.sleep(1)

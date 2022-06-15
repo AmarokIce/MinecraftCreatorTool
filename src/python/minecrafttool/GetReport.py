@@ -41,7 +41,7 @@ class GetReport:
             for line in filedata:
                 time.sleep(0.05) #? 迭代缓冲
                 
-                self.__getDescriptionLine = self.__getDescriptionLine + 1
+                self.__getDescriptionLine += 1
                 if 'Description' in line:
                     line = line.replace('\n','')
                     __getDescription = line

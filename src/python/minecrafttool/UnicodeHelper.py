@@ -3,13 +3,13 @@
 
 class UnicodeHelper:
     def __init__(self, getString):
-        self.getStr = None
         self.getString = getString
 
     def unicodeMode(self):
-        self.getStr = self.getStr.encode('unicode_escape')
-        self.getStr = self.getStr.replace('\\\\', '\\')
-        print(self.getStr)
+        self.getString = self.getString.encode('unicode_escape')
+        self.getString = str(self.getString).replace('\\\\', '\\')
+        self.getString = self.getString.replace('b', '')
+        print(self.getString)
 
 
 if __name__ == "__main__":
