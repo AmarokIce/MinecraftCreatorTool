@@ -24,7 +24,7 @@ from minecrafttool.GetJSONHelper    import GetJSONHelper
 from minecrafttool.GetReport        import GetReport
 from minecrafttool.TickHelper       import TickHelper
 from minecrafttool.UnicodeHelper    import UnicodeHelper
-from python.icon.GIFHelper          import GIFHelper
+from icon.GIFHelper                 import GIFHelper
 
 def classJson():
     while True:
