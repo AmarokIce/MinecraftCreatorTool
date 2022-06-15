@@ -24,12 +24,12 @@ $状态： 正在更新$
 ***
 ## <span id=lib>**外部库**</span>
 图像处理需要使用到部分库。请放心，我使用的是一些热门且优秀的库，安装这些库也会提高你的工作效率。
-若你还没有这些库，可以在lib文件夹中运行GitPIPLib.py文件获取。
-列表如下：
-Numpy : Python数据运算常用库。
-Pillow : Python图像处理常用库。
-MatplotLib : Python数据绘图库。
-OpenCV : Python优质视觉图像处理库。
+若你还没有这些库，可以在lib文件夹中运行GitPIPLib.py文件获取。  
+列表如下：  
+Numpy : Python数据运算常用库。  
+Pillow : Python图像处理常用库。  
+MatplotLib : Python数据绘图库。  
+OpenCV : Python优质视觉图像处理库。  
 
 
 ***
