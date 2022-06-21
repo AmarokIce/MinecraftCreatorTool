@@ -43,9 +43,9 @@ class UpdateFile:
         
         projectPockage = self.projectFilePath + '\\MinecraftCreatorTool-master'
         MainProject = projectPockage + '\\src\\python\\Main.py'
-        MoveProject = projectPockage + '\\src\\python\\core\\update\\MoveFile.py'
+        MoveProject = projectPockage + '\\src\\python\\core\\update\\MoveZIPFile.py'
         OldMainProject = self.projectFilePath + '\\src\\python\\Main.py'
-        OldMoveProject = self.projectFilePath + '\\src\\python\\core\\update\\MoveFile.py'
+        OldMoveProject = self.projectFilePath + '\\src\\python\\core\\update\\MoveZIPFile.py'
         
         MineSrc = os.path.join(projectPockage, MainProject)
         MoveSrc = os.path.join(projectPockage, MoveProject)
