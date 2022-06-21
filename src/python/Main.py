@@ -134,7 +134,6 @@ def classUpdate():
                         classUpdate = UpdateFile(url)
                         classUpdate.download()
                         classUpdate.update()
-                        classUpdate.moveFile()
                         
                     except:
                         i =  input('遇到问题，是否重新尝试？(yes/no')
@@ -155,8 +154,6 @@ def classUpdate():
                         classUpdate = UpdateFile(url)
                         classUpdate.download()
                         classUpdate.update()
-                        classUpdate.moveFile()
-                        
                         
                     except:
                         i =  input('遇到问题，是否重新尝试？(yes/no')

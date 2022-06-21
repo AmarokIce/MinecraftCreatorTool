@@ -17,9 +17,16 @@ class MoveZIPFile:
         for file in filelist:
             oldSrc = os.path.join(projectPockage, file)
             newSrc = os.path.join(self.projectFilePath, file)
+            
+            print(oldSrc)
+            print(newSrc)
     
             shutil.move(oldSrc, newSrc)
             time.sleep(0.5)
         print('已经完成更新！准备删除多余文件...')
         os.remove(self.zipPath)
         shutil.rmtree(projectPockage)
+        
+if __name__ == '__main__':
+    MoveFile = MoveZIPFile()
+    MoveFile.movefile()

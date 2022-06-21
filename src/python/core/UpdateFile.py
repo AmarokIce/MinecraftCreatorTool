@@ -56,8 +56,8 @@ class UpdateFile:
         shutil.move(MoveSrc, newMoveSrc)
 
         print('完成！准备迁移全部文件...')
-
-    def moveFile():
+        
+        
         MoveClass = MoveZIPFile()
         MoveClass.movefile()
 
