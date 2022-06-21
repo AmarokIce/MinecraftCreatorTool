@@ -30,7 +30,7 @@ class GIFHelper:
 if __name__ == '__main__':
     classGIF = GIFHelper()
     try:
-        classGIF
+        classGIF.Start()
     except:
         print('未知的問題。')
     else:
