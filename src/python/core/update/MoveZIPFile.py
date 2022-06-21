@@ -6,7 +6,7 @@ import shutil
 import time
 
 
-class MoveFile:
+class MoveZIPFile:
     def __init__(self):
         self.projectFilePath = os.path.abspath(os.path.join(os.path.dirname(__file__),'../../../..'))
         self.zipPath = self.projectFilePath + '\\src\python\core\MinecraftCreatorTool-master.zip'

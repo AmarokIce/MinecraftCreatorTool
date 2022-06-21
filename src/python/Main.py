@@ -16,15 +16,22 @@ If you are unable to accept a license other than those approved by the Open Sour
 If you choose to accept AFL-3.0, you may need to show in your README or somewhere else that is very convenient to see, you are using the AFL-3.0 license.
 
 '''
+import json
+import sys
+sys.path.append('src\\python\\core')
+sys.path.append('src\\python\\core\\update')
+
 
 import os
 import pprint
 import time
-from minecrafttool.GetJSONHelper    import GetJSONHelper
-from minecrafttool.GetReport        import GetReport
-from minecrafttool.TickHelper       import TickHelper
-from minecrafttool.UnicodeHelper    import UnicodeHelper
-from icon.GIFHelper                 import GIFHelper
+import requests
+from minecrafttool.GetJSONHelper import GetJSONHelper
+from minecrafttool.GetReport import GetReport
+from minecrafttool.TickHelper import TickHelper
+from minecrafttool.UnicodeHelper import UnicodeHelper
+from icon.GIFHelper import GIFHelper
+from core.UpdateFile import UpdateFile
 
 def classJson():
     while True:
@@ -74,6 +81,109 @@ def classGIF():
     classGIFHelper = GIFHelper()
     classGIFHelper()
 
+def classUpdate():
+    projectFilePath = os.path.abspath(os.path.join(os.path.dirname(__file__),'../..'))
+    api = 'https://api.github.com/repos/AmarokIce/MinecraftCreatorTool'
+    download = 'https://github.com/AmarokIce/MinecraftCreatorTool/archive/refs/heads/master.zip'
+    
+    def getProjectUpdate():
+        def getFileTimes():
+            f = {}
+            files = os.listdir(projectFilePath)
+
+            for file in files:
+                times = os.path.getmtime(projectFilePath + file)
+                f[file] = times
+            return f
+
+        def getGitHubUpdate(oldUpdateTimes):
+            info = requests.get(api).json()
+            updateTimes = time.mktime(time.strptime(info['updated_at'], '%Y-%m-%dT%H:%M:%SZ'))
+            if not oldUpdateTimes:
+                oldUpdateTimes = info['updated_at']
+            if updateTimes > oldUpdateTimes:
+                return True
+            else:
+                return False
+        
+        getFileTimes =  getFileTimes()
+        for i in getFileTimes:
+            isOld = getGitHubUpdate(getFileTimes[i])
+            if isOld:
+                return True
+    
+    
+    def askForUpdate():
+        mirror = [
+            '若不需要自动推送，可以在config.json中将AutoUpdate设为False.',
+            '0: 不更新',
+            '1: 通过github更新（保持最新）',
+            '2: 通过gitcode更新（国内镜像，较快，但是不一定是最新）'
+            # '3: 通过git从github拉取（需要拥有git环境）'
+        ]
+        pprint.pprint(mirror)
+        while True:
+            j = input('是否进行自动更新？')
+            if j == '0':
+                break
+                
+            elif j == '1':
+                while True:
+                    try:
+                        url = download
+                        classUpdate = UpdateFile(url)
+                        classUpdate.download()
+                        classUpdate.update()
+                        classUpdate.moveFile()
+                        
+                    except:
+                        i =  input('遇到问题，是否重新尝试？(yes/no')
+                        if i == 'yes':
+                            pass
+                        elif i == 'no':
+                            break
+                        
+                    else:
+                        print('以完成更新，即将进入菜单。')
+                        break
+                break
+            
+            elif j == '2':
+                while True:
+                    try:
+                        url = 'https://gitcode.net/qq_36258771/MinecraftCreatorTool/-/archive/master/MinecraftCreatorTool-master.zip'
+                        classUpdate = UpdateFile(url)
+                        classUpdate.download()
+                        classUpdate.update()
+                        classUpdate.moveFile()
+                        
+                        
+                    except:
+                        i =  input('遇到问题，是否重新尝试？(yes/no')
+                        if i == 'yes':
+                            pass
+                        elif i == 'no':
+                            break
+                    else:
+                        print('以完成更新，即将进入菜单。')
+                        break
+                break
+                                
+            elif j == '3':
+                print('未完成！')
+            
+            else:
+                print('输入0结束对话。')
+    
+    try:
+        getGitHubUpdate = getProjectUpdate()
+    except:
+        print('无法连接Github或遇到了其他问题！')
+        askForUpdate()
+    else:
+        if getGitHubUpdate != False:
+            askForUpdate()
+
 def CommandMune(Command):
     CommandTable = {
         'json': classJson,
@@ -95,6 +205,33 @@ HelpTable = {
 
 #* Start Main: Minecraft Creator Tool Pockage #
 if __name__ == "__main__":
+    ConfigText = {
+    "Auto-Update" : "True"
+}
+    Text = str(ConfigText)
+    Text = Text.replace('\'', '\"')
+    
+    Config = os.path.abspath(os.path.join(os.path.dirname(__file__),'config.json'))
+    if os.path.exists(Config):
+        pass
+    else:
+        with open(Config, 'w') as configWriter:
+            configWriter.write(Text)
+            time.sleep(0.5)
+    
+    with open(Config, 'r', encoding='utf-8') as j:
+        ConfigText = json.load(j)
+        time.sleep(0.5)
+    
+    if "Auto-Update" in ConfigText:
+        if ConfigText['Auto-Update'] == "True":
+            classUpdate()
+    else:
+        with open(Config, 'w') as configWriter:
+            configWriter.write(Text)
+            classUpdate()
+    
+    
     while True:
         Command = input('如果你需要帮助，请输入help：')
         if Command == 'help':
