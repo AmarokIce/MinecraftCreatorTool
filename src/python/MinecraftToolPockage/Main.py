@@ -16,13 +16,14 @@ If you are unable to accept a license other than those approved by the Open Sour
 If you choose to accept AFL-3.0, you may need to show in your README or somewhere else that is very convenient to see, you are using the AFL-3.0 license.
 
 '''
-import json
-import sys
-sys.path.append('src\\python\\core')
-sys.path.append('src\\python\\core\\update')
-
-
+# Get ProjectDir
 import os
+import sys
+project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),))
+sys.path.append(project_dir + '\\core')
+sys.path.append(project_dir + '\\core\\update')
+
+import json
 import pprint
 import time
 import requests

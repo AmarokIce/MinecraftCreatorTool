@@ -11,6 +11,8 @@ If you're selling my source code or compiled code, I'll be very angry and accuse
 If you are unable to accept a license other than those approved by the Open Source Initiative, you may use these codes using the AFL-3.0 license, instead of complying with this license.
 If you choose to accept AFL-3.0, you may need to show in your README or somewhere else that is very convenient to see, you are using the AFL-3.0 license.
 
+[With AFL - 3.0? Click me.](https://opensource.org/licenses/AFL-3.0)
+
 
 === 凤梨许可证 ===
 我会提供全部或者部分的代码，只要您在法律限制之内使用，您可以随意的使用这些代码。
@@ -23,3 +25,5 @@ If you choose to accept AFL-3.0, you may need to show in your README or somewher
 
 如果您无法接受一份在开源社区协会认可之外的许可证，您可以参照AFL-3.0许可证来使用这些代码，而不是遵照这份许可证。
 若您选择接受AFL-3.0，您可能需要在您的README中或者别的能够非常方便的看到的地方著名，您正在使用AFL-3.0许可证的情况下使用这些代码。
+
+[了解AFL - 3.0？ 点击我。](https://opensource.org/licenses/AFL-3.0)
