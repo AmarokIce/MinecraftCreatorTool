@@ -62,4 +62,4 @@ OpenCV : Python优质视觉图像处理库。
 
 参见：
 [PineappleLICENSE](license.md)
-[With AFL - 3.0](licenses.txt)
+[With AFL - 3.0](LICENSE-AFL.txt)
